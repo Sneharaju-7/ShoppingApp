@@ -1,1 +1,23 @@
+trigger:
+- main  # Trigger pipeline when changes are pushed to the main branch
 
+pool:
+  vmImage: ubuntu-latest  # Use a hosted Ubuntu agent
+
+steps:
+# Step 1: Set up Python environment
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'  # Use the latest Python 3.x version
+  displayName: "Set up Python"
+
+# Step 2: Install dependencies from the correct path
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r project/requirements.txt
+  displayName: "Install dependencies"
+
+# Step 3: Run a simple Python script to check the environment
+- script: |
+    python -c "print('🎶 Hello from Music Playlist Batch Creator!')"
+  displayName: "Run a Python script"
