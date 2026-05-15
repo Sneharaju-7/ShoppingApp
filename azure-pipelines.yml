@@ -2,19 +2,17 @@ trigger:
 - main
 
 pool:
-  vmImage : 'ubuntu-latest'
-
-steps:
+  vmImage: 'ubuntu-latest'
 - task: UsePythonVersion@0
   inputs:
-    versionSpec : '3.x'
-  displayName : 'Install Python'
+    versionSpec: '3.x'
+  displayName: 'Install Python'
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName : 'Install Pip'
+    pip install -r requirements.txt 
+  displayName: 'Install Pip'
 
 - script: |
     python -c "print('SHOPPING APP CREATED')"
-  displayName : 'Verify Build'
+  displayName: 'Verify Build'
