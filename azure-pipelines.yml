@@ -6,15 +6,15 @@ pool:
 
 steps:
 - task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-  displayName: 'Install Python'
+    inputs:
+      versionSpec: '3.x'
+    displayName: 'Install python'
 
 - script: |
     python -m pip install --upgrade pip
     pip install -r project/requirements.txt
-  displayName: 'Install Pip and Dependencies'
+  displayName: 'Install PIP'
 
 - script: |
-    python -c "print('SHOPPING APP CREATED')"
+    python -c "print('SUCCESS, CREATED')"
   displayName: 'Verify Build'
