@@ -12,7 +12,7 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    python install -r requirements.txt
+    pip install -r requirements.txt
   displayName : 'Install Pip'
 
 - script: |
